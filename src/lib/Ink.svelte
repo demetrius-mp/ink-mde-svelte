@@ -1,5 +1,4 @@
 <script lang="ts">
-	import { browser } from '$app/environment';
 	import ink, { type Instance, type Options } from 'ink-mde';
 	import { onMount } from 'svelte';
 
@@ -13,7 +12,7 @@
 	});
 
 	$: {
-		if (browser && editor && options) {
+		if (editor && options) {
 			editor.reconfigure(options);
 		}
 	}
