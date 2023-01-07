@@ -12,6 +12,8 @@
 		theme = theme === 'dark' ? 'light' : 'dark';
 		document.documentElement.setAttribute('data-theme', theme);
 	}
+
+	$: console.log(doc);
 </script>
 
 <svelte:head>
@@ -36,8 +38,8 @@
 
 <Ink
 	bind:editor
+	bind:value={doc}
 	options={{
-		doc,
 		interface: {
 			toolbar: true,
 			appearance: theme
